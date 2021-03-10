@@ -48,10 +48,12 @@ Partial Class MathContest
         Me.SubtractRadioButton = New System.Windows.Forms.RadioButton()
         Me.AddRadioButton = New System.Windows.Forms.RadioButton()
         Me.MathContestToolTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.StudentInfoGroupBox.SuspendLayout()
         Me.ButtonGroupBox.SuspendLayout()
         Me.MathProblemGroupBox.SuspendLayout()
         Me.ProblemTypeGroupBox.SuspendLayout()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'NameTextBox
@@ -309,6 +311,10 @@ Partial Class MathContest
         Me.MathContestToolTip.SetToolTip(Me.AddRadioButton, "1st Number + 2nd Number")
         Me.AddRadioButton.UseVisualStyleBackColor = True
         '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.ContainerControl = Me
+        '
         'MathContest
         '
         Me.AcceptButton = Me.SubmitButton
@@ -331,6 +337,7 @@ Partial Class MathContest
         Me.MathProblemGroupBox.PerformLayout()
         Me.ProblemTypeGroupBox.ResumeLayout(False)
         Me.ProblemTypeGroupBox.PerformLayout()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -360,4 +367,5 @@ Partial Class MathContest
     Friend WithEvents SubtractRadioButton As RadioButton
     Friend WithEvents AddRadioButton As RadioButton
     Friend WithEvents MathContestToolTip As ToolTip
+    Friend WithEvents ErrorProvider1 As ErrorProvider
 End Class
